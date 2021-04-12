@@ -14,7 +14,7 @@ class StrainsController < ApplicationController
     get "/strains/new" do
         if logged_in?
             @current_user
-            erb :'strains/create_strain'
+            erb :'strains/new'
         else
             redirect to('/login')
         end
@@ -26,7 +26,7 @@ class StrainsController < ApplicationController
             @strain = current_user.strains.build(params)
             if !@strain.save
               @errors = @strain.errors.full_messages
-              erb :'/strains/create_strain'
+              erb :'/strains/new'
             else
               redirect to('/strains')
             end
@@ -39,7 +39,7 @@ class StrainsController < ApplicationController
     get "/strains/:id" do
         @strain = Strain.find_by_id(params[:id])
         if logged_in? && @strain.user == current_user
-            erb :'strains/show_strain'
+            erb :'/strains/show'
         else
             redirect to('/login')
         end
@@ -47,11 +47,11 @@ class StrainsController < ApplicationController
 
     #edit
     get "/strains/:id/edit" do
-        @strain = strain.find(params[:id])
+        @strain = Strain.find(params[:id])
         if logged_in? && @strain.user == current_user
-            @strain = strain.find(params[:id])
+            @strain = Strain.find_by_id(params[:id])
             @user = User.find(session[:user_id])
-            erb :'strains/update_strain'
+            erb :'strains/edit'
         else
             redirect to('/login')
         end
@@ -75,7 +75,7 @@ class StrainsController < ApplicationController
     end
 
     #delete
-    delete "/strains/:id" do
+    delete "/strains/:id/delete" do
         @strain = Strain.find(params[:id])
         if logged_in? && @strain.user == current_user
           @strain.destroy
