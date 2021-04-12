@@ -1,0 +1,28 @@
+<h1>Strain Details</h1>
+
+<br></br>
+
+<h2><%= @strain.name %></h2>
+
+<br>
+
+<p><b>Date:</b> <%= @strain.date %></p>
+<p><b>Form:</b> <%= % @strain.form %></p>
+<p><b>THC:</b> <%= @strain.thc %></p>
+<p><b>CBD:</b> <%= @strain.cbd %></p>
+<p><b>Review:</b> <%= @strain.review %></p>
+
+<br>
+
+<a href="/strains/<%= @strain.id %>/edit">Edit strain</a>
+
+<br></br>
+
+<form action="/strains/<%= @strain.id %>/delete" method="POST">
+  <input type="hidden" id="hidden" name="_method" value="DELETE"/>
+  <input type="submit" value="Delete strain">
+</form>
+
+<br></br>
+
+<a href="/strains">View All strains</a>
