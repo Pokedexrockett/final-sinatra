@@ -8,12 +8,17 @@ class ApplicationController < Sinatra::Base
      ## gives access to patch/put and delete
      set :method_override, true
      enable :sessions
-     set :session_secret, "some cool dope password"
+     set :session_secret, "purple sticky punch"
   end
 
   get "/" do
     erb :welcome
   end
+
+  get "/facts" do
+    erb :welcome
+  end
+  
 
 
 

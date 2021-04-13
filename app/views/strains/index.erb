@@ -10,7 +10,7 @@
   <% if @strains.size > 0 %>
     <% @strains.each do |strain| %>
       <% if strain.user_id == @current_user.id %>
-        <li><a href="/strains/<%= strain.id %>"><b><%= strain.name %></b></a> from <%= strain.date %> for <%= % strain.form %></li>
+        <li><a href="/strains/<%= strain.id %>"><b><%= strain.name %></b></a> from <%= strain.date %></li>
         <br></br>
       <% end %>
     <% end %>

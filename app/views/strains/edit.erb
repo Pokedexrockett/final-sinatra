@@ -6,40 +6,28 @@
   <% end %>
 <% end %>
 
-<br></br>
+
 
 
 <form action="/strains/<%= @strain.id%>" method="POST">
   <input type="hidden" name="_method" value="PATCH">
 
-  <label for="name">Name: </label>
-  <input type="text" name="name" id="name" value="<%= @strain.name %>"/>
+  <p>Name: <input type="text" name="name" id="name" value="<%= @strain.name %>"/> </p>
+  
+  <p>Date: 
+  <input type="date" name="date" id="date" min="2021-01-01" max="2029-12-31" value="<%= @strain.date %>"/></p>
 
-  <br></br>
+  <p>Form:  
+  <input type="text" name="form" id="form" value="<%= @strain.form %>"/></p>
 
-  <label for="date">Date: </label>
-  <input type="date" name="date" id="date" min="2021-01-01" max="2029-12-31" value="<%= @strain.date %>"/>
+  <p>THC: 
+  <input type="number" name="thc" id="thc" min="0.01" step="0.01" max="9999.99" value="<%= @strain.thc %>"/></p>
 
-  <br></br>
+  <p>CBD: 
+  <input type="number" name="cbd" id="cbd" min="0.01" step="0.01" max="9999.99" value="<%= @strain.cbd %>"/></p
 
-  <label for="form">Form:  </label>
-  <input type="text" name="form" id="form" value="<%= @strain.form %>"/>
-
-  <br></br>
-
-  <label for="thc">THC: </label>
-  <input type="number" name="thc" id="thc" min="0.01" step="0.01" max="9999.99" value="<%= @strain.thc %>"/>
-
-  <br></br>
-
-  <label for="CBD">CBD: </label>
-  <input type="number" name="cbd" id="cbd" min="0.01" step="0.01" max="9999.99" value="<%= @strain.cbd %>"/>
-  <br></br>
-
-  <label for="review">Review: </label>
-  <input type="text" name="review" id="review" value="<%= @strain.review %>"/>
-
-  <br></br>
+  <p for="review">Review: 
+  <input type="text" name="review" id="review" value="<%= @strain.review %>"/></p>
 
   <input type="submit" value="Edit Strain">
 </form>

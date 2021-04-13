@@ -7,4 +7,5 @@ require './config/environment'
 use UsersController
 use StrainsController
 use SessionsController
+use FactsController
 run ApplicationController
