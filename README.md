@@ -1,5 +1,5 @@
 Project Title
-My Cannabis Journal is a CRUD, MVC web application using Sinatra that allows a user to track strains they have tried. 
+My Cannabis Journal is a CRUD, MVC web application that uses Sinatra to allow a user to track strains they have tried. 
 
 Description
 A user signs up with a username, email, and password. Once registered and logged in, a user can create and save new strains with a name, date, form, thc, cbd, and review. Once created, strais can be editted or deleted. 
@@ -14,6 +14,9 @@ https://github.com/Pokedexrockett/final-sinatra
 
 Executing program
 run 'Bundle install' to install missing gems. Then, shotgun to run the we applicaton. 
+
+Contributors
+Dexter Crockett
 
 Version History
 0.1
