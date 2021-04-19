@@ -20,6 +20,7 @@ Version History
 
 License
 MIT License
+https://opensource.org/licenses/MIT
 
 Copyright (c) [2021] [Dexter Crockett]
 
