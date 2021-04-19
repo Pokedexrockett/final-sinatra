@@ -17,4 +17,4 @@ class UsersController < ApplicationController
         redirect to "/sign_up"
       end 
     end  
-  end
+end

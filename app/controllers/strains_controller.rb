@@ -38,8 +38,11 @@ class StrainsController < ApplicationController
     #show
     get "/strains/:id" do
         @strain = Strain.find_by_id(params[:id])
-        if logged_in? && @strain.user == current_user
-            erb :'/strains/show'
+        if logged_in? 
+            if @strain.user == current_user
+                erb :'/strains/show'
+            else redirect to('/strains')
+            end
         else
             redirect to('/login')
         end
